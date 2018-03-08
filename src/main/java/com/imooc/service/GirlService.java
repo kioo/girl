@@ -26,7 +26,7 @@ public class GirlService {
         girlRepository.save(girlA);
 
         Girl girlB = new Girl();
-        girlB.setCupSize("dddddddddddddddddddB");
+        girlB.setCupSize("B");
         girlB.setAge(18);
         girlRepository.save(girlB);
     }
@@ -39,5 +39,9 @@ public class GirlService {
         }else if(age > 10 && age < 16 ){
             throw new GirlException(ResultEnum.MIDDLE_SCHOOL);
         }
+    }
+
+    public Girl findOne(Integer id){
+        return girlRepository.findOne(id);
     }
 }
