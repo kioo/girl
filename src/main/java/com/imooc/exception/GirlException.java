@@ -1,14 +1,16 @@
 package com.imooc.exception;
 
+import com.imooc.enums.ResultEnum;
+
 /**
  * Created by Jackie on 2018/3/8.
  */
 public class GirlException extends RuntimeException {
     private Integer code;
 
-    public GirlException(Integer code,String message) {
-        super(message);
-        this.code = code;
+    public GirlException(ResultEnum resultEnum) {
+        super(resultEnum.getMsg());
+        this.code = resultEnum.getCode();
     }
 
     public Integer getCode() {

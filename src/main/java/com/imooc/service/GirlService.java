@@ -1,6 +1,7 @@
 package com.imooc.service;
 
 import com.imooc.domain.Girl;
+import com.imooc.enums.ResultEnum;
 import com.imooc.exception.GirlException;
 import com.imooc.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +35,9 @@ public class GirlService {
         Girl girl = girlRepository.findOne(id);
         Integer age = girl.getAge();
         if(age < 10 ){
-            throw new GirlException(100,"你还在上小学吧");
+            throw new GirlException(ResultEnum.PRIMARY_SCHOOL);
         }else if(age > 10 && age < 16 ){
-            throw new GirlException(101,"你可能上初中，也可能在打工");
+            throw new GirlException(ResultEnum.MIDDLE_SCHOOL);
         }
     }
 }
