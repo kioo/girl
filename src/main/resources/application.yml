@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: prod # 启动的获取参数的模式
+#maven中 使用--spring.profiles.active=prod 进行模式的选择
+  datasource:
+     driver-class-name:
+     url: jdbc:mysql://127.0.0.1:3306/dbgirl
+     username: root
+     password: 5218791
+  jpa:
+     hibernate:
+       ddl-auto: update # create 每次都重建表(数据会被清空）， update 更新表结构（数据不被清空，
+     show-sql: true
